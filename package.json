@@ -20,6 +20,8 @@
   "homepage": "https://github.com/jaywooski/zookeepr#readme",
   "dependencies": {
     "express": "^4.17.2",
-    "heroku": "^7.33.3"
+    "heroku": "^7.59.2",
+    "node": "^17.3.0",
+    "uuid": "^8.3.2"
   }
 }
