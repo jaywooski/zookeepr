@@ -1,4 +1,5 @@
 const $displayArea = document.querySelector('#display-area');
+const $zookeeperForm = document.querySelector("#zookeeper-form");
 
 const printResults = resultArr => {
   console.log(resultArr);
@@ -20,7 +21,15 @@ const printResults = resultArr => {
   $displayArea.innerHTML = animalHTML.join('');
 };
 
+$zookeeperForm.addEventListener('submit', handleGetZookeepersSubmit);
+
 const getZookeepers = () => { 
+  let queryUrl = '/api/zookeepers?';
+
+  Object.entries(formData).forEach(([key, value]) => {
+    queryUrl += `${key}=${value}&`;
+  });
+
   fetch('/api/zookeepers')
     .then(response => {
       if (!response.ok) {
